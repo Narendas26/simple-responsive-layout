@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 2px dashed tomato;
+        }
+
+        .container{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: flex-start; /*এটা মুলত horizontally কোথায় কেমনে বসবে ইলিমেন্ট সেটাকে ফোকাস করে কাজ করে।*/
+        }
+
+        .container-1{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .container-2{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container-3{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container-4{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container-5{
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .container-6{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            align-items: flex-start;  /*এটা মুলত Vertically কোথায় কেমনে বসবে ইলিমেন্ট সেটাকে ফোকাস করে কাজ করে।*/
+        }
+
+         .container-7{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            align-items: center;
+        }
+
+        .container-8{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            align-items: flex-end;
+        }
+
+        .container-9{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-direction: row;
+        }
+
+        .container-10{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-direction: column;
+        }
+
+        .container-11{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-direction: column-reverse;
+        }
+
+        .container-12{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-direction: row-reverse;
+        }
+
+        .container-13{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-wrap: wrap;     /*এটা মুলত Wrap এর কাজ করে। যখন  এক লাইনে ধরে না তখন বাকি এলিমেন্টগুলোকে পরের লাইনে পাাঠিয়ে দেয় Wrap করে। */
+        }
+
+         .container-14{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-wrap: nowrap;     /*এটা মুলত nowrap এর কাজ করে। যখন  এক লাইনে ধরে না তখন বাকি এলিমেন্টগুলোকে ডিভ এর বাইরে পাঠিয়ে দেয়। */
+        }
+
+         .container-15{
+            border: 2px solid salmon;
+            display: flex;
+            height: 300px;
+            flex-wrap: wrap-reverse;     /*এটা মুলত Wrap উল্টো করার এর কাজ করে। যখন  এক লাইনে ধরে না তখন বাকি এলিমেন্টগুলোকে পরের লাইনে পাাঠিয়ে দেয় উল্টৈা Wrap করে। */ */
+        }
+    </style>
+
+</head>
+<body>
+    
+        <h1>Flexbox Layout</h1>
+
+        <h4>Flex-Start:</h4>
+        <div class="container">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Flex-End:</h4>
+        <div class="container-1">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Flex-Center:</h4>
+        <div class="container-2">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Space Between:</h4>
+        <div class="container-3">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+        
+        <h4>Space Evenly:</h4>
+        <div class="container-4">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Space Around:</h4>
+        <div class="container-5">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Vertical Movement: Flex-Start</h4>
+        <div class="container-6">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Vertical Movement: center</h4>
+        <div class="container-7">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>Vertical Movement: Flex-End</h4>
+        <div class="container-8">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>flex-direction: row (by-default)</h4>
+        <div class="container-9">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>flex-direction: column </h4>
+        <div class="container-10">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>flex-direction: column-reverse</h4>
+        <div class="container-11">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+        <h4>flex-direction: row-reverse</h4>
+        <div class="container-12">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+        </div>
+
+
+        <h4>flex-wrap: wrap</h4>
+        <div class="container-13">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+            <div class="box">box-4</div>
+            <div class="box">box-5</div>
+            <div class="box">box-6</div>
+            <div class="box">box-7</div>
+            <div class="box">box-8</div>
+            <div class="box">box-9</div>
+            <div class="box">box-10</div>
+            <div class="box">box-11</div>
+            <div class="box">box-12</div>
+            <div class="box">box-13</div>
+            <div class="box">box-14</div>
+            <div class="box">box-15</div>
+            <div class="box">box-16</div>
+            <div class="box">box-17</div>
+            <div class="box">box-18</div>
+            <div class="box">box-19</div>
+        </div>
+
+
+        <h4>flex-wrap: no-wrap</h4>
+        <div class="container-14">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+            <div class="box">box-4</div>
+            <div class="box">box-5</div>
+            <div class="box">box-6</div>
+            <div class="box">box-7</div>
+            <div class="box">box-8</div>
+            <div class="box">box-9</div>
+            <div class="box">box-10</div>
+            <div class="box">box-11</div>
+            <div class="box">box-12</div>
+            <div class="box">box-13</div>
+            <div class="box">box-14</div>
+            <div class="box">box-15</div>
+            <div class="box">box-16</div>
+            <div class="box">box-17</div>
+            <div class="box">box-18</div>
+            <div class="box">box-19</div>
+        </div>
+
+
+        <h4>flex-wrap: Wrap-reverse</h4>
+        <div class="container-15">
+            <div class="box">box-1</div>
+            <div class="box">box-2</div>
+            <div class="box">box-3</div>
+            <div class="box">box-4</div>
+            <div class="box">box-5</div>
+            <div class="box">box-6</div>
+            <div class="box">box-7</div>
+            <div class="box">box-8</div>
+            <div class="box">box-9</div>
+            <div class="box">box-10</div>
+            <div class="box">box-11</div>
+            <div class="box">box-12</div>
+            <div class="box">box-13</div>
+            <div class="box">box-14</div>
+            <div class="box">box-15</div>
+            <div class="box">box-16</div>
+            <div class="box">box-17</div>
+            <div class="box">box-18</div>
+            <div class="box">box-19</div>
+        </div>
+
+</body>
+</html>
