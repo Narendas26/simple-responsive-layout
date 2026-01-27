@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <style>
+
+        .container-1{
+            display: grid;
+            grid-template-columns: 200px 200px 200px 200px 200px; /*grid-template-columns: number-of-columns and their size*/   
+        }
+
+        .container-2{
+            display: grid;
+            grid-template-columns: repeat(2, 200px);  /*grid-template-columns: repeat(number-of-columns, their size) */
+        }
+
+        .container-3{
+            display: grid;
+            grid-template-columns: repeat(2, 100px) 200px;  /*grid-template-columns: repeat(number-of-columns, their size), new_column_&_size */
+        }
+
+
+        .container-4{
+            display: grid;
+            grid-template-columns: 200px 200px 100px 100px 50px;
+        }
+
+        .container-5{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /*grid-template-columns:repeat(how-many-column, প্রতিটা কলাম কত ভাগ জায়গা নেবে তা) : মোট ৩ টা কলাম হবে সবাই সমান ভাগের*/
+        }
+
+        .container-6{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 2fr; /*grid-template-columns:repeat(how-many-column, প্রতিটা কলাম কত ভাগ জায়গা নেবে তা) শেষ কলাম কত ভাগ জায়গা নেবে তা: মোট ৪ টা কলাম হবে ১ম তিনটি ১ ভাগ এবং শেষ এর  টি ২ ভাগ জায়গা নিবে*/
+        }
+
+        .container-7{
+            display: grid;
+            grid-template-columns: 200px auto 200px;  /*grid-template-columns: 200px auto 200px > ১ম টা 200px, ২য় টা অটো বাকি দৈর্ঘ্য (৩য়টা বাদ দিয়ে), ৩য় টা 200px*/
+        }
+
+        .container-8{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: end;
+        }
+
+        .container-9{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: start;
+        }
+
+        .container-10{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: center;
+        }
+
+        .container-11{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: space-around;
+        }
+
+        .container-12{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: space-between;
+        }
+
+        .container-13{
+            display: grid;
+            grid-template-columns: 100px 200px auto;
+            justify-content: space-evenly;
+        }
+
+        .item{
+            border: 2px solid chocolate;
+        }
+    </style>
+</head>
+<body>
+    
+     <h2>Explore Grid Layout: 2D Layout</h2>
+
+     <h2>Practice 1: grid-template-columns: 200px 200px 200px 200px 200px;</h2>
+     <div class="container-1">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+    <h2>Practice 2: grid-template-columns: repeat(2, 200px)</h2>
+     <div class="container-2">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+    <h2>Practice 3: grid-template-columns: repeat(2, 100px) 200px</h2>
+     <div class="container-3">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 4: grid-template-columns: 200px 200px 100px 100px 50px;</h2>
+     <div class="container-4">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 5: grid-template-columns: repeat(3, 1fr)</h2>
+     <div class="container-5">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+    </div>
+
+
+    <h2>Practice 6: grid-template-columns: repeat(3, 1fr) 2fr</h2>
+     <div class="container-6">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 6: grid-template-columns: 200px auto 200px</h2>
+     <div class="container-7">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: end</h2>
+     <div class="container-8">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: start</h2>
+     <div class="container-9">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+    <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: center</h2>
+     <div class="container-10">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: space-around</h2>
+     <div class="container-11">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+     
+    <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: space-between</h2>
+     <div class="container-12">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+    <h2>Practice 6: grid-template-columns: 100px 200px auto & justify-content: space-evenly</h2>
+     <div class="container-13">
+        <div class="item">item - 1</div>
+        <div class="item">item - 2</div>
+        <div class="item">item - 3</div>
+        <div class="item">item - 4</div>
+        <div class="item">item - 5</div>
+        <div class="item">item - 6</div>
+        <div class="item">item - 7</div>
+        <div class="item">item - 8</div>
+        <div class="item">item - 9</div>
+        <div class="item">item - 10</div>
+        <div class="item">item - 11</div>
+        <div class="item">item - 12</div>
+        <div class="item">item - 13</div>
+        <div class="item">item - 14</div>
+        <div class="item">item - 15</div>
+        <div class="item">item - 16</div>
+        <div class="item">item - 17</div>
+        <div class="item">item - 18</div>
+        <div class="item">item - 19</div>
+        <div class="item">item - 20</div>
+     </div>
+
+
+</body>
+</html>
