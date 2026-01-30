@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 2</title>
+
+    <style>
+
+            .parent{
+                    width: 70%;
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    height: 40vh;
+
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr); /* 3টা column তৈরির জন্য*/
+                    grid-template-rows: auto auto;          /* 2টা row তৈরির জন্য যেগুলোর সাইজ অটো*/
+                    gap: 5px;
+            }
+
+            .parent div{
+                padding:5px;
+            }
+
+            .parent .child-1{
+                grid-row: span 2;
+                background-color: crimson;
+                color: white;
+            }
+
+            .parent .child-2{
+                grid-column: span 2;
+                background-color: tomato;
+                color: white;
+            }
+
+            .parent .child-3{
+                background-color: blueviolet;
+                color: white;
+            }
+
+            .parent .child-4{
+                background-color: cadetblue;
+                color: white;
+            }
+
+            @media screen and (max-width:576px){
+                
+                        .parent{
+                                grid-template-columns: 1fr;
+                        }
+
+                        .parent .child-1{
+                            grid-column: auto;  /*সকল colspan বাদ দেয়ার জন্য*/
+                            grid-row: auto;     /*সকল rowspan বাদ দেয়ার জন্য*/
+                        }
+
+                        .parent .child-2{
+                            grid-column: auto;
+                            grid-row: auto;
+                        }
+
+                        .parent .child-3{
+                            grid-column: auto;
+                            grid-row: auto;
+                        }
+
+                        .parent .child-4{
+                            grid-column: auto;
+                            grid-row: auto;
+                        }
+            }
+
+    </style>
+
+</head>
+<body>
+    
+        <main>
+
+                <div class="parent">
+
+                    <div class="child-1">1</div>
+                    <div class="child-2">2</div>
+                    <div class="child-3">3</div>
+                    <div class="child-4">4</div>
+
+                </div>
+
+        </main>
+
+</body>
+</html>
