@@ -24,13 +24,13 @@
             }
 
             .parent .child-1{
-                grid-row: span 2;
+                grid-row: span 2;   /*for rowspan*/
                 background-color: crimson;
                 color: white;
             }
 
             .parent .child-2{
-                grid-column: span 2;
+                grid-column: span 2;  /*for colspan*/
                 background-color: tomato;
                 color: white;
             }
@@ -51,9 +51,9 @@
                                 grid-template-columns: 1fr;
                         }
 
-                        .parent .child-1{
-                            grid-column: auto;  /*সকল colspan বাদ দেয়ার জন্য*/
-                            grid-row: auto;     /*সকল rowspan বাদ দেয়ার জন্য*/
+                        /* .parent .child-1{
+                            grid-column: auto;  
+                            grid-row: auto;     
                         }
 
                         .parent .child-2{
@@ -69,7 +69,14 @@
                         .parent .child-4{
                             grid-column: auto;
                             grid-row: auto;
+                        } */
+
+                        .parent .child-1, .parent .child-2, .parent .child-3, .parent .child-4 {
+
+                             grid-column: auto;  /*সকল colspan বাদ দেয়ার জন্য*/
+                            grid-row: auto;     /*সকল rowspan বাদ দেয়ার জন্য*/
                         }
+                       
             }
 
     </style>
